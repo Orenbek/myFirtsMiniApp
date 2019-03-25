@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/music/music",
     "pages/welcome/welcome",
     "pages/posts/post",
     "pages/index/index",
@@ -7,7 +8,9 @@
     "pages/posts/post-detail/post-detail",
     "pages/movies/movies",
     "pages/movies/more-movie/more-movie",
-    "pages/movies/movie-detail/movie-detail"
+    "pages/movies/movie-detail/movie-detail",
+    "pages/music/music-detail/music-detail"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -23,6 +26,12 @@
         "text": "文章",
         "iconPath": "/images/tab/yuedu.png",
         "selectedIconPath": "images/tab/yuedu_hl.png"
+      },
+      {
+        "pagePath": "pages/music/music",
+        "text": "音乐",
+        "iconPath": "/images/tab/music.png",
+        "selectedIconPath": "images/tab/music_h1.png"
       },
       {
         "pagePath": "pages/movies/movies",

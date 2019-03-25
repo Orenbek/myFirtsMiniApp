@@ -7,10 +7,10 @@
       <image src='/images/wx.png' data-postId='3'></image>
     </swiper-item>
     <swiper-item>
-      <image src='/images/vr.png' data-postId='4'></image>
+      <image src='/images/miniapp.jpg' data-postId='4'></image>
     </swiper-item>
     <swiper-item>
-      <image src='/images/iqiyi.png' data-postId='5'></image>
+      <image src='/images/custom.jpg' data-postId='5'></image>
     </swiper-item>
   </swiper>
   <block wx:for='{{posts_key}}' wx:for-item='item'>

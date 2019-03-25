@@ -1,0 +1,134 @@
+<import src="../music-controller/music-controller-template.wxml"/>
+<!-- <view class='underskin'> -->
+
+<image class='bg-img' src='http://p2.music.126.net/UL2iOIcKR3VsIpx4TNipFA==/109951163858678631.jpg?param=140y140' mode='aspectFill'></image>
+<!-- </view> -->
+<view class='heads'>
+  <image class='cover-img' src='http://p2.music.126.net/UL2iOIcKR3VsIpx4TNipFA==/109951163858678631.jpg?param=140y140'></image>
+  <view class='right-heads'>
+    <text class='title'>我喜欢的音乐 热单Remixes|知名歌曲</text>
+    <view class='statis'>
+      <image class='listen' src='/images/icon/listen.png'></image>
+      <text class='listened-count'>收听量</text>
+    </view>
+  </view>
+</view>
+
+<view class='e-function'>
+<view class='functions'>
+  <view class='function'>
+    <image src='/images/icon/e_play.png'></image>
+    <text>播放</text>
+  </view>
+  <view class='function' catchtap='onCollectionTap'>
+    <image src="{{collected? '/images/icon/d_collect.png' : '/images/icon/e_collect.png'}}"></image>
+    <text>收藏</text>
+  </view>
+  <view class='function'>
+    <image src='/images/icon/e_comment.png'></image>
+    <text>评论</text>
+  </view>
+  <view class='function'>
+    <image src='/images/icon/e_share.png'></image>
+    <text>分享</text>
+  </view>
+</view>
+</view>
+
+<view class='songs-container'>
+  <view style='width: 100%; height: 1px; background-color: #a6a6a6;'></view>
+
+  <view class='song-container'>
+    <view class='num-container'>
+      <text class='num'>1</text>
+    </view>
+    <view class='name-author'>
+      <text class='song-name'>ghost</text>
+      <text class='song-author'>Megumi Acorda - ghost</text>
+      <view class='horizon'></view>
+    </view>
+  </view>
+
+   <view class='song-container'>
+    <view class='num-container'>
+      <text class='num'>2</text>
+    </view>
+    <view class='name-author'>
+      <text class='song-name'>Just the way you lie</text>
+      <text class='song-author'>Rihanna&Eminem</text>
+      <view class='horizon'></view>
+    </view>
+  </view>
+
+  <view class='song-container'>
+    <view class='num-container'>
+      <text class='num'>3</text>
+    </view>
+    <view class='name-author'>
+      <text class='song-name'>Lose Yourself</text>
+      <text class='song-author'>Eminem</text>
+      <view class='horizon'></view>
+    </view>
+  </view>
+
+  <view class='song-container'>
+    <view class='num-container'>
+      <text class='num'>4</text>
+    </view>
+    <view class='name-author'>
+      <text class='song-name'>This Is What You Came For</text>
+      <text class='song-author'>Rihanna</text>
+      <view class='horizon'></view>
+    </view>
+  </view>
+
+  <view class='song-container'>
+    <view class='num-container'>
+      <text class='num'>5</text>
+    </view>
+    <view class='name-author'>
+      <text class='song-name'>See You Again</text>
+      <text class='song-author'>Carrie Underwood</text>
+      <view class='horizon'></view>
+    </view>
+  </view>
+
+  <view class='song-container'>
+    <view class='num-container'>
+      <text class='num'>6</text>
+    </view>
+    <view class='name-author'>
+      <text class='song-name'>Feelings</text>
+      <text class='song-author'>Maroon 5</text>
+      <view class='horizon'></view>
+    </view>
+  </view>
+
+  <view class='song-container'>
+    <view class='num-container'>
+      <text class='num'>7</text>
+    </view>
+    <view class='name-author'>
+      <text class='song-name'>Forgot About Dre</text>
+      <text class='song-author'>Eminem</text>
+      <view class='horizon'></view>
+    </view>
+  </view>
+
+  <view class='song-container'>
+    <view class='num-container'>
+      <text class='num'>8</text>
+    </view>
+    <view class='name-author'>
+      <text class='song-name'>Sweet But Psycho</text>
+      <text class='song-author'>Ava Max</text>
+      <view class='horizon'></view>
+    </view>
+  </view>
+
+  <view style="height: 120rpx;" />
+</view>
+
+ <view>
+ <template is='MusicController' data='{{isPlayingMusic}}'/>
+ </view>

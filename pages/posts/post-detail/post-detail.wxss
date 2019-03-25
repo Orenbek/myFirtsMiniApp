@@ -23,6 +23,7 @@
   position: absolute;
   left: 50%;
   margin-left: -51rpx;
+  /* 据说这个是经典的居中方法。 */
   top: 180rpx;
   opacity: 0.7;
 }

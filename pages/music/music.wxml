@@ -1,0 +1,42 @@
+<import src='music-controller/music-controller-template.wxml'/>
+<view class='contain'>
+  <view class='components'>
+    <image class='component-img' src='/images/music/fm.png'></image>
+    <text class='component-title'>私人FM</text>
+  </view>
+  <view class='components'>
+    <image class='component-img' src='/images/music/daily.png'></image>
+    <text class='component-title'>每日推荐</text>
+  </view>
+  <view class='components'>
+    <image class='component-img' src='/images/music/gedan.png'></image>
+    <text class='component-title'>每日推荐</text>
+  </view>
+  <view class='components'>
+    <image class='component-img' src='/images/music/paihang.png'></image>
+    <text class='component-title'>排行榜</text>
+  </view>
+</view>
+<view class='horizon'></view>
+
+<view>
+  <text class='recom-title'> 每日精彩 </text>
+  <image src='/images/icon/b46.png' style='width: 16rpx; height: 20rpx;'></image>
+</view>
+
+<!-- 歌单列表 -->
+<view class='cover-contain'>
+<block wx:for="{{albums}}" wx:for-item='album'>
+ <view class='cover' bindtap='onCoverTap' data-albumId='{{album.albumId}}'>
+    <image class='cover-img' src='{{album.coverImg}}'></image>
+    <text class='cover-title'>{{album.title}}</text>
+  </view>
+</block>
+ </view>
+
+ <view>
+ <template is='MusicController' data='{{isPlayingMusic}}'/>
+ </view>
+
+<view style="height: 120rpx;" />
+

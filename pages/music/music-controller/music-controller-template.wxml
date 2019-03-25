@@ -1,0 +1,10 @@
+<template name='MusicController'>
+  <view class='controller'>
+    <image class='controller-cover-img' src='/images/music/a34.png'></image>
+    <text class='controller-song-name'>Lost Star</text>
+    <view class='tool'>
+      <image class='play-stop'src="{{isPlayingMusic? '/images/icon/pause-mini.png' : '/images/icon/play-mini.png'}}"  bindtap='onPlayStopTap'></image>
+      <image class='next-song' src='/images/icon/next.png'></image>
+    </view>
+  </view>
+</template>

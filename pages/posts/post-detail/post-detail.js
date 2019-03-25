@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isPlayingMusic: false
+    
   },
   
   onCollectionTap: function(event) {
@@ -48,136 +48,24 @@ Page({
     })
   },
 
-  onMusicTap: function(event) {
-    var currentPostId = this.data.currentPostId;
-    var postData = postsData.postList[currentPostId];
-    var isPlayingMusic = this.data.isPlayingMusic;
-    if (isPlayingMusic) {
-      wx.pauseBackgroundAudio();
-      this.setData({
-        isPlayingMusic: false
-      })
-    } else {
-      wx.playBackgroundAudio({
-        dataUrl: postData.music.url,
-        title: postData.music.title,
-        coverImgUrl: postData.music.coverImg 
-      });
-      this.setData({
-        isPlayingMusic: true
-      });
-    }
-
-  },
-
-  setMusicMonitor:function(){
-    var that = this;
-    wx.onBackgroundAudioPlay(function () {
-      that.setData({
-        isPlayingMusic: true
-      });
-      app.globalData.g_isPlayingMusic = true;
-      app.globalData.g_currentMusicPostId = that.data.currentPostId;
-    });
-    wx.onBackgroundAudioPause(function () {
-      that.setData({
-        isPlayingMusic: false
-      });
-      app.globalData.g_isPlayingMusic = false;
-      app.globalData.g_currentMusicPostId = null;
-    });
-    wx.onBackgroundAudioStop(function () {
-      that.setData({
-        isPlayingMusic: false
-      });
-      app.globalData.g_isPlayingMusic = false;
-      app.globalData.g_currentMusicPostId = null;
-    });
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function(options) {
     var globalData = app.globalData;
     var postId = options.id;
     this.data.currentPostId = postId;
-    // console.log(postId);
     // var postData= postsData.postList[postId];
-    // this.data.postData = postData; //这个绑定失败了，好像失效了？？
+    // this.data.postData = postData; //这个不会绑定成功。必须用setdata方法来绑定
     this.setData({
       postData: postsData.postList[postId]
     });
 
-    // wx.setStorageSync('key', {game:'风暴英雄',developer:'暴雪'}); //同步缓存方法
-
     var postsCollected = wx.getStorageSync('posts_collected');
     if (!postsCollected[postId]) {
-      // postsCollected = {};  //这里程序出了一个bug，不知道老师是犯错误了还是没注意。已经改过来了。
-      postsCollected[postId] = false;
+      postsCollected[postId] = '';  //这里之前有个问题 之前是直接设置成布尔值，后来报错了。之前没有报错的。可能又改了。
       wx.setStorageSync('posts_collected', postsCollected);
     }
     this.setData({
       collected: postsCollected[postId]
     });
-
-    if(app.globalData.g_isPlayingMusic && app.globalData.g_currentMusicPostId == postId){
-      // this.data.isPlayingMusic = true;
-      this.setData({
-        isPlayingMusic : true
-      })
-    }
-
-    this.setMusicMonitor();
-
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
-  }
 })
