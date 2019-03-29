@@ -38,6 +38,7 @@ Page({
 
   onLoad: function (options) {
     this.setData({posts_key:postsData.postList});
+    console.log('loading....');
   },
 
   onReady: function () {

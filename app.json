@@ -9,8 +9,8 @@
     "pages/movies/movies",
     "pages/movies/more-movie/more-movie",
     "pages/movies/movie-detail/movie-detail",
-    "pages/music/music-detail/music-detail"
-    
+    "pages/music/music-detail/music-detail",
+    "pages/music/all-albums/all-albums"
   ],
   "window": {
     "backgroundTextStyle": "light",

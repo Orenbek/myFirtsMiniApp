@@ -1,6 +1,6 @@
 // pages/music/music.js
 var app = getApp();
-var albums = require('../../data/music-data.js');
+var albumsData = require('../../data/music-data.js');
 Page({
 
   data: {
@@ -8,6 +8,19 @@ Page({
     dataUrl: 'http://dl.stream.qqmusic.qq.com/C400004GdXjG0e9LCv.m4a?guid=6816239100&vkey=0761BC6F2B114D8A0E3F2503D83591B11F6ED885BF678E6F7E70EE63F1DEE8D0A17E3D4228CC03D81E546707C3BB00DC1A3A9BB136F3851C&uin=0&fromtag=66',
     songTitle: 'lost stars - Adam Levine',
     coverImgUrl: 'http://imge.kugou.com/stdmusic/240/20150718/20150718033819377218.jpg'
+  },
+
+  on3itemTap: function(event) {
+    var itemId = event.currentTarget.dataset.itemid;
+    wx.navigateTo({
+      url: 'music-detail/music-detail?id=' + itemId,
+    });
+  },
+
+  onWholeAlbumsTap: function(event) {
+    wx.navigateTo({
+      url: 'all-albums/all-albums',
+    });
   },
 
   onCoverTap: function(event) {
@@ -63,12 +76,11 @@ Page({
   onLoad: function(options) {
     this.setData({
       isPlayingMusic: app.globalData.g_isPlayingMusic,
-      albums: albums.albums
+      albums: albumsData.albums
     });
-    
   },
-  
-  onShow: function(event){
+
+  onShow: function(event) {
     this.setData({
       isPlayingMusic: app.globalData.g_isPlayingMusic
     });

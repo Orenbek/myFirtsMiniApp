@@ -78,9 +78,11 @@ Page({
    */
   onLoad: function(options) {
     var albumId = options.id;
-    this.data.currentAlbumId = albumId;
+    console.log(albumId);
+    // this.data.currentAlbumId = albumId;
     this.setData({
-      albumData: albumsData.albums[albumId]
+      albumData: albumsData.album[0],   //这里应该是albumsData.album[albumId],但是我们现在没有那么多的数据，先用第一个代替了。
+      currentAlbumId: albumId   //不用set方法，绑定不成功。
     });
 
     this.setData({
